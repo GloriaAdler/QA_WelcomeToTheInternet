@@ -12,28 +12,28 @@ public class NestedFramesPage extends BasePage {
     }
 
     public void switchToFrameAndPrintText() {
-        // Переключаемся в верхний фрейм
+        //верхний фрейм
         driver.switchTo().frame("frame-top");
 
-        // Переключаемся в левый фрейм и выводим текст
+        //левый фрейм
         driver.switchTo().frame("frame-left");
         System.out.println("Left Frame Text: " + driver.findElement(By.tagName("body")).getText());
-        driver.switchTo().parentFrame(); // Возвращаемся в frame-top
+        driver.switchTo().parentFrame();
 
-        // Переключаемся в средний фрейм и выводим текст
+        //средний фрейм
         driver.switchTo().frame("frame-middle");
         System.out.println("Middle Frame Text: " + driver.findElement(By.tagName("body")).getText());
-        driver.switchTo().parentFrame(); // Возвращаемся в frame-top
+        driver.switchTo().parentFrame();
 
-        // Переключаемся в правый фрейм и выводим текст
+        //правый фрейм
         driver.switchTo().frame("frame-right");
         System.out.println("Right Frame Text: " + driver.findElement(By.tagName("body")).getText());
-        driver.switchTo().defaultContent(); // Выходим из всех фреймов
+        driver.switchTo().defaultContent();
 
-        // Переключаемся в нижний фрейм и выводим текст
+        //нижний фрейм
         driver.switchTo().frame("frame-bottom");
         System.out.println("Bottom Frame Text: " + driver.findElement(By.tagName("body")).getText());
-        driver.switchTo().defaultContent(); // Выходим из фреймов
+        driver.switchTo().defaultContent();
     }
 
 }

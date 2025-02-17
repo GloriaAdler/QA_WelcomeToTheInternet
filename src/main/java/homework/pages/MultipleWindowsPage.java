@@ -20,26 +20,26 @@ public class MultipleWindowsPage extends BasePage {
     WebElement clickHereLink;
 
     public void openNewTab() {
-        clickHereLink.sendKeys(Keys.CONTROL, Keys.RETURN); // Открываем ссылку в новой вкладке
+        clickHereLink.sendKeys(Keys.CONTROL, Keys.RETURN);
     }
 
     public void switchToNewTabAndVerifyUrl() {
         List<String> tabs = new ArrayList<>(driver.getWindowHandles());
         if (tabs.size() > 1) {
-            driver.switchTo().window(tabs.get(1)); // Переключаемся на новую вкладку
+            driver.switchTo().window(tabs.get(1)); //на новую вкладку
             System.out.println("Current URL: " + driver.getCurrentUrl());
             assert driver.getCurrentUrl().equals("https://the-internet.herokuapp.com/windows/new")
                     : "Ошибка! Мы не попали на нужную страницу.";
 
-            driver.close(); // Закрываем новую вкладку
-            driver.switchTo().window(tabs.get(0)); // Возвращаемся на страницу "Multiple Windows"
+            driver.close();
+            driver.switchTo().window(tabs.get(0)); //на страницу "Multiple Windows"
         } else {
             throw new RuntimeException("Новая вкладка не была открыта!");
         }
     }
 
     public void returnToHomePage() {
-        driver.navigate().to("https://the-internet.herokuapp.com/"); // Возвращаемся на главную страницу
+        driver.navigate().to("https://the-internet.herokuapp.com/"); //на главную страницу
     }
 
 }

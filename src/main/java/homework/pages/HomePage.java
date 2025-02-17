@@ -12,7 +12,6 @@ public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
-        //PageFactory.initElements(driver, this);
     }
 
     @FindBy (xpath = "//a[contains(text(),'Nested Frames')]")
@@ -29,5 +28,13 @@ public class HomePage extends BasePage {
     public MultipleWindowsPage clickOnMultipleWindowsLink() {
         click(multipleWindows);
         return new MultipleWindowsPage(driver, wait);
+    }
+
+    @FindBy(xpath = "//a[contains(text(),'Dropdown')]")
+    WebElement dropdownLink;
+
+    public DropdownPage goToDropdownPage() {
+        click(dropdownLink);
+        return new DropdownPage(driver, wait);
     }
 }
