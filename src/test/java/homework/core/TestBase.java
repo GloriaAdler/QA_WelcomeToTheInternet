@@ -1,5 +1,6 @@
 package homework.core;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.ITestResult;
@@ -20,7 +21,7 @@ public class TestBase {
         app.init();
     }
 
-    @AfterMethod(enabled = false)
+    @AfterMethod(enabled = true)
     public void tearDown(Method method, ITestResult result) {
         if (result.isSuccess()) {
             logger.info("Test is PASSED: [" + method.getName() + "]");
@@ -29,4 +30,6 @@ public class TestBase {
         }
         app.stop();
     }
+
+
 }

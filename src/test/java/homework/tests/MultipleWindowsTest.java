@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class MultipleWindowsTest extends TestBase {
+
+    //HW 22 task 2
     @BeforeMethod
     public void preCondition() {
         new HomePage(app.driver, app.wait)

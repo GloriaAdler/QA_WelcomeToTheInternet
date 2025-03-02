@@ -1,11 +1,9 @@
 package homework.pages;
 
 import homework.core.BasePage;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePage extends BasePage {
@@ -14,6 +12,10 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
+    //Lesson 25 (переход на конкретную страницу сайта, через константу)
+    public static final String HOME_PAGE_URL = "https://the-internet.herokuapp.com/";
+
+    //homework 23-25
     @FindBy (xpath = "//a[contains(text(),'Nested Frames')]")
     WebElement nestedFrames;
 

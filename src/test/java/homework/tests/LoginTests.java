@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 public class LoginTests extends TestBase {
 
+    //HW 22 task 1
     @BeforeMethod
     public void preCondition() {
         new HomePage(app.driver, app.wait);
