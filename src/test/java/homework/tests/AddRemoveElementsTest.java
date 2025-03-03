@@ -15,13 +15,11 @@ public class AddRemoveElementsTest extends TestBase {
     }
 
     @Test
+
     public void addElementsPositiveTest() {
         new AddRemoveElementsPage(app.driver, app.wait)
                 .addElement()
                 .deleteElement();
     }
-
-
-
 
 }

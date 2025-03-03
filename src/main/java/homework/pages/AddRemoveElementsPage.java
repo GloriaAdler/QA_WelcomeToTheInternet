@@ -31,5 +31,4 @@ public class AddRemoveElementsPage extends BasePage {
         }
         return this;
     }
-
 }
